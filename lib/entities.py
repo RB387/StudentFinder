@@ -12,11 +12,11 @@ class DataProtocol(Protocol):
     """ Интерфейс для сущностей """
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "DataProtocol":
-        """ сериализация """
+        """ десериализация """
         ...
 
     def as_dict(self) -> Dict[str, Any]:
-        """ десериализация """
+        """ сериализация """
         ...
 
 
