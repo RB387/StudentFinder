@@ -74,7 +74,7 @@ def main():
     config = get_config()
 
     injector = DependencyInjector(config, deps_container=DependenciesContainer())
-    cli = injector.inject(CliInterface)()
+    cli = injector.inject(CliInterface)()  # внедрили зависимости и инициализировали класс
 
     cli.start()
 

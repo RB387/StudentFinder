@@ -3,27 +3,33 @@ from typing import Dict, Any, Protocol
 
 
 class PrimaryKey(int):
+    """ Тип данных, обозначающий первичный ключ """
     ...
 
 
 @dataclass
 class DataProtocol(Protocol):
+    """ Интерфейс для сущностей """
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "DataProtocol":
+        """ сериализация """
         ...
 
     def as_dict(self) -> Dict[str, Any]:
+        """ десериализация """
         ...
 
 
 @dataclass
 class Student(DataProtocol):
+    """ Реализация интерфейса DataProtocol для сущности студента """
     record_id: PrimaryKey
     first_name: str
     last_name: str
     birthday_date: str
 
     def __str__(self):
+        """ Строчное представление сущности """
         return f'Номер зачетной книжки: {self.record_id}\n' \
                f'Имя: {self.first_name}\n' \
                f'Фамилия: {self.last_name}\n' \

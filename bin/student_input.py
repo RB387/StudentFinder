@@ -5,6 +5,7 @@ from lib.entities import PrimaryKey
 
 
 class StudentInputCli:
+    """ Валидатор данных, вводимых пользоватлем """
     @staticmethod
     def input_record_id() -> PrimaryKey:
         while True:
