@@ -1,0 +1,8 @@
+Benchmark test
+
+
+Test iterations count: 100
+
+
+Linear search result: 2.7772111892700195 seconds
+Index search result: 0.008102178573608398 seconds
