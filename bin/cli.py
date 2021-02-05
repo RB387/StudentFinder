@@ -1,8 +1,7 @@
 from dataclasses import dataclass
 
-from simio_di import Provide, DependencyInjector, DependenciesContainer
+from simio_di import Provide
 
-from bin.config import get_config
 from bin.student_input import StudentInputCli
 from lib.data_access import StudentDataAccessProtocol
 from lib.entities import Student
@@ -68,16 +67,3 @@ class CliInterface:
 
     def exit(self):
         self._running = False
-
-
-def main():
-    config = get_config()
-
-    injector = DependencyInjector(config, deps_container=DependenciesContainer())
-    cli = injector.inject(CliInterface)()  # внедрили зависимости и инициализировали класс
-
-    cli.start()
-
-
-if __name__ == "__main__":
-    main()

@@ -91,26 +91,3 @@ class IndexFileStudentDataAccess(FileStudentDataAccess):
         expand_size = (record_id - len(self._index_array)) * 2
         for _ in range(expand_size):
             self._index_array.append(None)
-
-
-if __name__ == "__main__":
-    config = {
-        FileDataClient: {
-            "file_path": "test.txt",
-            "entity_type": Student,
-        }
-    }
-
-    injector = DependencyInjector(config, deps_container=DependenciesContainer())
-    dao = injector.inject(IndexFileStudentDataAccess)()
-
-    print(dao.get_student(PrimaryKey(1)))
-    # dao.add_student(
-    #     Student(
-    #         record_id=PrimaryKey(10),
-    #         first_name="DAS",
-    #         last_name="sss",
-    #         birthday_date="2020",
-    #     )
-    # )
-    print(dao.get_student(PrimaryKey(10)))
