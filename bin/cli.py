@@ -31,8 +31,8 @@ class CliInterface:
 
             if user_choice is None:
                 print("Такого варианта ответа нет\n")
-
-            user_choice()
+            else:
+                user_choice()
 
     def add_student(self):
         record_id = StudentInputCli.input_record_id()
