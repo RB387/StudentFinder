@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from simio_di import Provide
 
-from lib.cli.student_input import StudentInputCli
+from cli.student_input import StudentInputCli
 from lib.data_access import StudentDataAccessProtocol
 from lib.entities import Student
 from lib.exceptions import RecordNotFound, DuplicateRecordId

@@ -2,7 +2,7 @@ from simio_di import DependencyInjector, DependenciesContainer
 
 from config import get_config
 
-from lib.cli import CliInterface
+from cli import CliInterface
 
 
 def main():
