@@ -65,7 +65,7 @@ class IndexFileStudentDataAccess(FileStudentDataAccess):
             self._index_array[student.record_id] = position  # сохраняем в массиве позицию в файле
 
     def _validate_record_id(self, record_id: PrimaryKey):
-        if record_id > len(self._index_array):
+        if record_id >= len(self._index_array):
             # если id больше текущего, то расширяем его
             self._expand_index_array(record_id)
 
@@ -88,6 +88,6 @@ class IndexFileStudentDataAccess(FileStudentDataAccess):
 
     def _expand_index_array(self, record_id: PrimaryKey):
         """ Расширяет массив в два раза значениями None """
-        expand_size = (record_id - len(self._index_array)) * 2
+        expand_size = (record_id - (len(self._index_array) - 1)) * 2
         for _ in range(expand_size):
             self._index_array.append(None)

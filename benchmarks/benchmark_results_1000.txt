@@ -1,0 +1,9 @@
+Benchmark test
+
+
+Test iterations count: 100
+File size: 1000. Trying to find last student
+
+
+Linear search result: 4.5956292152404785 seconds
+Index search result: 0.008478879928588867 seconds
