@@ -20,7 +20,7 @@ class StudentDataAccessProtocol(Protocol):
 @dataclass
 class FileStudentDataAccess(StudentDataAccessProtocol):
     """
-        Реализация интерфейся StudentDataAccessProtocol, где в качестве БД используется файл
+        Реализация интерфейса StudentDataAccessProtocol, где в качестве БД используется файл
         Данная реализация использует линейный поиск. Сложность O(n)
     """
     file_client: Depends[FileDataClient]  # type: FileDataClient[Student]
@@ -41,7 +41,7 @@ class FileStudentDataAccess(StudentDataAccessProtocol):
 @dataclass
 class IndexFileStudentDataAccess(FileStudentDataAccess):
     """
-        Реализация интерфейся StudentDataAccessProtocol, где в качестве БД используется файл
+        Реализация интерфейса StudentDataAccessProtocol, где в качестве БД используется файл
         Данная реализация использует поиск с помощью индексного массива. Сложность O(1)
     """
     _index_array: List[Optional[int]] = field(default_factory=list, init=False)
