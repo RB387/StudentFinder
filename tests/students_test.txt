@@ -1,0 +1,4 @@
+record_id,first_name,last_name,birthday_date
+1,first,last,12-02-2000
+3,dsa,ddd,12-01-2000
+2,dssss,ccc,12-03-2000
