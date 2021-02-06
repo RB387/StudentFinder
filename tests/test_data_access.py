@@ -68,7 +68,7 @@ class TestIndexFileStudentDataAccess:
                     (Student(record_id=PrimaryKey(3), first_name='das', last_name='das', birthday_date='2020-03-03'), 22),
                     (Student(record_id=PrimaryKey(8), first_name='cccc', last_name='aaa', birthday_date='2020-03-03'), 33),
                 ],
-                [None, 11, None, 22, None, None, None, None, 33, None, None, None],
+                [None, 11, None, 22, None, None, None, None, 33, None, None, None, None, None],
             ),
         ),
     )
@@ -83,7 +83,7 @@ class TestIndexFileStudentDataAccess:
         'current_index, record_id, expected_index, expected_exception',
         (
             (
-                [], PrimaryKey(3), [None, None, None, None, None, None], does_not_raise()
+                [], PrimaryKey(3), [None, None, None, None, None, None, None, None], does_not_raise()
             ),
             (
                 [None, 123], PrimaryKey(1), [None, 123], pytest.raises(DuplicateRecordId)
@@ -123,7 +123,7 @@ class TestIndexFileStudentDataAccess:
     @pytest.mark.parametrize(
         'record_id, current_index, position, expected_index, expected_exception',
         (
-            (PrimaryKey(2), [], 123, [None, None, 123, None], does_not_raise()),
+            (PrimaryKey(2), [], 123, [None, None, 123, None, None, None], does_not_raise()),
             (PrimaryKey(1), [None, 222], 123, [None, 222], pytest.raises(DuplicateRecordId)),
         ),
     )
