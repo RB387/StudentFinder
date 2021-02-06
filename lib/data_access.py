@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Protocol, List, Optional
 
-from simio_di import Depends, DependencyInjector, DependenciesContainer
+from simio_di import Depends
 
 from lib.entities import PrimaryKey, Student
 from lib.exceptions import DuplicateRecordId, RecordNotFound

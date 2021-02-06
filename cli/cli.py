@@ -50,7 +50,7 @@ class CliInterface:
             self.student_data_access.add_student(student)
             print("Добавлено!\n")
         except DuplicateRecordId:
-            print("Студент с таким номером записной книжки уже существует!\n")
+            print("Студент с таким номером зачетной книжки уже существует!\n")
 
     def find_student(self):
         record_id = StudentInputCli.input_record_id()
