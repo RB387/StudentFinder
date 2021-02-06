@@ -1,4 +1,6 @@
 import setuptools
+import py2exe  # Необходимо для сборки с помощью py2exe
+
 
 with open("requirements.txt", "r") as f:
     requirements = f.read().splitlines()
@@ -19,4 +21,6 @@ setuptools.setup(
     packages=setuptools.find_packages(exclude=("tests",)),
     install_requires=requirements,
     python_requires=">=3.8",
+    console=["run.py"],
+    options={"py2exe": {"includes": ["simio_di"]}}
 )
